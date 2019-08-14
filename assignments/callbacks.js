@@ -49,26 +49,26 @@ function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
   return cb(x + y);
 }
-sumMessage = (print) => {
-  return console.log('The sum of the two numbers is: ' + print);
+sumMessage = (sum) => {
+  return console.log('The sum of the two numbers is: ' + sum);
 }
-sumNums(25, 50, sumMessage);
+sumNums(25, 50, sumMessage); // 75
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
   return cb(x*y);
 }
-multiplyNums(3, 4, (print) => {
-  return console.log('The sum of the two numbers is : ' + print);
-})
+multiplyNums(3, 4, (product) => {
+  return console.log('The product of the two numbers is : ' + product);
+}) // 12
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
   return cb(list.includes(item));
 }
-tfMessage = (print) => {
-  return console.log('It is ' + print + ' that the item is present in the list(case sensitive).');
+tfMessage = (tf) => {
+  return console.log('It is ' + tf + ' that the item is present in the list(case sensitive).');
 }
 contains("Pencil", items, tfMessage); // True statement
 contains("Stickers", items, tfMessage); // False statement
@@ -81,11 +81,11 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
-  let noDuplicates = array.filter((string, index) => array.indexOf(string) === index);
+  let noDuplicates = array.filter((string, index) => array.indexOf(string) === index); //needed help to find this answer
   return cb(noDuplicates);
 }
 
 removeDuplicates(duplicate, (print) => {
-  return console.log(print);
+  return console.log(`Here is a list with no duplicates in it: ${print}.`);
 })
 
